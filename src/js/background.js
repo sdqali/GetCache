@@ -9,4 +9,10 @@
   chrome.browserAction.onClicked.addListener(function(tab) {
     navigateToCachedPage (tab);
   });
+
+  chrome.contextMenus.create({title: "View Google's cache",
+                              contexts:["all"],
+                              onclick: function (clickData, tab) {
+                                navigateToCachedPage (tab);
+                              }});
 }) ();
